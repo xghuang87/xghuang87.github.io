@@ -1,0 +1,21 @@
+.lab{
+    border: 2px dashed pink;
+    height:100%;
+    padding:120px 100px 0px 32%;
+}
+
+.image-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap:50px;
+}
+
+
+    
+
+.lab-image img{
+    /* border:2px solid green; */
+    height:300px;
+    width:300px;
+    object-fit: cover;
+}

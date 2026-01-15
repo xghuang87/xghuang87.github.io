@@ -1,0 +1,23 @@
+
+.publication{
+    /* border: 2px dashed pink; */
+    height:100%;
+    padding:120px 100px 0px 32%;
+}
+
+select{
+    font-size: 1rem;
+}
+
+.publication>table{
+    padding-top: 40px;
+}
+th {
+    background-color: #adb5bd;
+    color: white;
+    height: 50px;;
+  }
+
+td
+
+tr:hover {background-color: rgb(215, 208, 208);}
