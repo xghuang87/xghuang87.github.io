@@ -1,0 +1,53 @@
+.sidebar{
+    /* border:2px solid blue; */
+    display:flex;
+    flex-direction: column;
+    width: 15%;
+    height:700px;
+    padding:100px 20px 200px 10%;
+    position:fixed;
+    color: #494e52;
+}
+
+/* .sidebar div{
+    border:2px solid plum;
+} */
+
+
+.portrait-container img{
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+}
+
+
+section .name{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding:0px 0px 10px 0px;
+}
+
+section .title{
+    font-size: 0.9rem;
+    padding-bottom: 20px;
+}
+
+ul{
+    height:150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.contact-info li{
+    transition-property: color, font-size;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.contact-info li:hover{
+    color:#004e98;
+    font-size: 1rem;
+
+}
