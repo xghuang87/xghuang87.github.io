@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,36 +11,36 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background-color: #f9fafc;
             line-height: 1.6;
             color: #1e293b;
         }
-        
+
         a {
             text-decoration: none;
             color: #334155;
             transition: color 0.2s;
         }
-        
+
         a:hover {
             color: #b22222;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 30px;
         }
-        
+
         hr {
             border: none;
             border-top: 2px solid #e2e8f0;
             margin: 40px 0;
         }
-        
+
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -49,15 +50,15 @@
             border-left: 8px solid #b22222;
             padding-left: 20px;
         }
-        
+
         /* 卡片样式 */
         .card {
             background: white;
             padding: 50px;
             border-radius: 32px;
-            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Join Us 内容样式 */
         .join-message {
             font-size: 1.25rem;
@@ -66,37 +67,37 @@
             max-width: 900px;
             line-height: 1.8;
         }
-        
+
         .contact-item {
             margin-bottom: 25px;
             display: flex;
             align-items: flex-start;
         }
-        
+
         .contact-label {
             font-weight: 600;
             color: #b22222;
             width: 80px;
             font-size: 1.1rem;
         }
-        
+
         .contact-value {
             flex: 1;
             font-size: 1.1rem;
             color: #1e293b;
         }
-        
+
         .contact-value a {
             color: #2563eb;
             text-decoration: underline;
             text-underline-offset: 2px;
             font-weight: 500;
         }
-        
+
         .contact-value a:hover {
             color: #b22222;
         }
-        
+
         /* 职位列表（可选扩展） */
         .positions-grid {
             display: grid;
@@ -104,7 +105,7 @@
             gap: 15px;
             margin: 30px 0;
         }
-        
+
         .position-tag {
             background-color: #f1f5f9;
             color: #b22222;
@@ -115,8 +116,52 @@
             font-size: 1rem;
             border: 1px solid #e2e8f0;
         }
+
+        /* 小屏幕样式 */
+        @media screen and (max-width: 768px) {
+            .desktop-menu {
+                display: none !important;
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+
+            /* 学校名称字体变小 */
+            .school-name {
+                font-size: 0.9rem !important;
+                margin-left: 5px !important;
+                /* 减小左间距 */
+            }
+
+            /* 院系名称隐藏 */
+            .department-name {
+                display: none !important;
+            }
+
+            /* 导航条占据整个长度 */
+            .navbar {
+                width: 100% !important;
+                padding: 0 15px !important;
+                /* 减小左右内边距*/
+            }
+
+        }
+
+        /* 大屏幕样式 */
+        @media screen and (min-width: 769px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+
+        /* 移动端菜单动画 */
+        .mobile-menu.show {
+            display: flex !important;
+        }
     </style>
 </head>
+
 <body>
 
     <nav style="position: fixed; 
@@ -136,28 +181,47 @@
             padding: 0 30px;
             /* box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); */
             /* border-radius: 60px; */
-            border: 1px solid rgba(255,255,255,0.5);">
+            border: 1px solid rgba(255,255,255,0.5);"
+            class="navbar">
 
         <!-- 左边logo -->
         <div style="display: flex; align-items: center;">
             <img src="./images/logo.png" alt="SJTU Logo" style="height: 70px; width: auto; border-radius: 8px;">
         </div>
 
-        <!-- 中间红色文字 -->
-        <div style="text-align: left; margin-left: 20px; flex: 1;">
-            <div style="color: #b22222; font-weight: 700; font-size: 1.1rem;">Shanghai Jiao Tong University</div>
-            <div style="color: #b22222; font-size: 0.9rem;">School of Chemistry and Chemical Engineering</div>
+       <!-- 中间红色文字（小屏幕隐藏） -->
+        <div style="text-align: left; flex: 1; ">
+            <div style="color: #b22222; font-weight: 700; font-size: 1.1rem; margin-left: 20px;" class="school-name">
+                Shanghai Jiao Tong University</div>
+            <div style="color: #b22222; font-size: 0.9rem;margin-left: 20px;" class="department-name">School of
+                Chemistry and Chemical Engineering</div>
         </div>
 
-        <!-- 右边导航菜单 -->
-        <div style="display: flex; gap: 2rem; align-items: center;">
-            <div><a href="./index.html" >Home</a></div>
-            <div><a href="./pi.html" >PI</a></div>
+        <!-- 桌面端导航菜单 -->
+        <div style="display: flex; gap: 2rem; align-items: center;" class="desktop-menu">
+            <div><a href="#" >Home</a></div>
+            <div><a href="./pi.html">PI</a></div>
             <div><a href="./publication.html">Publication</a></div>
             <div><a href="./news.html">News</a></div>
-            <!-- <div><a href="./research.html">Team</a></div> -->
-            <div><a href="./join-us.html" style="color: #b22222;font-weight: 600;">Join us</a></div>
+            <div><a href="./join-us.html" style="color: #b22222; font-weight: 600;">Join us</a></div>
             <div><a href="./contact.html">Contact</a></div>
+        </div>
+
+        <!-- 移动端汉堡菜单按钮 -->
+        <div style="display: none; cursor: pointer; font-size: 2rem;" class="mobile-menu-btn"
+            onclick="toggleMobileMenu()">
+            ☰
+        </div>
+
+        <!-- 移动端下拉菜单 -->
+        <div style="display: none; position: fixed; top: 80px; left: 0; width: 100%; background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 20px; z-index: 999; flex-direction: column; gap: 15px;"
+            class="mobile-menu">
+            <div><a href="#" style="display: block; padding: 10px;" >Home</a></div>
+            <div><a href="./pi.html" style="display: block; padding: 10px;">PI</a></div>
+            <div><a href="./publication.html" style="display: block; padding: 10px;">Publication</a></div>
+            <div><a href="./news.html" style="display: block; padding: 10px;">News</a></div>
+            <div><a href="./join-us.html" style="color: #b22222; font-weight: 600; display: block; padding: 10px;">Join us</a></div>
+            <div><a href="./contact.html" style="display: block; padding: 10px;">Contact</a></div>
         </div>
     </nav>
     <!-- 占位：避免导航栏遮挡 -->
@@ -168,67 +232,82 @@
         <hr style="border: none; border-top: 2px solid #e2e8f0; margin: 20px 0 40px 0;">
     </div>
 
-<!-- ========== 正文：Join Us 页面 ========== -->
-<main class="container" style="margin-bottom: 80px;">
-    
-    <section>
-        <h2 class="section-title">Join us</h2>
-        
-        <div class="card">
-            
-            <!-- 招聘正文 -->
-            <div class="join-message">
-                We are actively seeking motivated postdoctoral fellows, graduate students, interns, and undergraduate students who are interested in RNA delivery to join our team.
-            </div>
-            
-            <!-- 邮箱联系方式（加了一点视觉强调） -->
-            <div style="background-color: #f8fafc; padding: 30px; border-radius: 24px; border: 1px solid #e2e8f0;">
-                <div class="contact-item" style="margin-bottom: 0; align-items: center;">
-                    <div class="contact-label" style="width: auto; margin-right: 20px;">📧 E-mail:</div>
-                    <div class="contact-value">
-                        <a href="mailto:xghuang@sjtu.edu.cn" style="font-size: 1.3rem;">xghuang@sjtu.edu.cn</a>
+    <!-- ========== 正文：Join Us 页面 ========== -->
+    <main class="container" style="margin-bottom: 80px;">
+
+        <section>
+            <h2 class="section-title">Join us</h2>
+
+            <div class="card">
+
+                <!-- 招聘正文 -->
+                <div class="join-message">
+                    We are actively seeking motivated postdoctoral fellows, graduate students, interns, and
+                    undergraduate students who are interested in RNA delivery to join our team.
+                </div>
+
+                <!-- 邮箱联系方式（加了一点视觉强调） -->
+                <div style="background-color: #f8fafc; padding: 30px; border-radius: 24px; border: 1px solid #e2e8f0;">
+                    <div class="contact-item" style="margin-bottom: 0; align-items: center;">
+                        <div class="contact-label" style="width: auto; margin-right: 20px;">📧 E-mail:</div>
+                        <div class="contact-value">
+                            <a href="mailto:xghuang@sjtu.edu.cn" style="font-size: 1.3rem;">xghuang@sjtu.edu.cn</a>
+                        </div>
+                    </div>
+                    <p
+                        style="color: #64748b; margin-top: 15px; font-size: 0.95rem; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
+                        Please send your CV and research interests when applying.
+                    </p>
+                </div>
+
+                <!-- 可选：招聘职位标签（增加一点活泼感） -->
+                <div style="margin-top: 40px;">
+                    <p style="color: #475569; margin-bottom: 15px; font-weight: 500;">We welcome applicants with
+                        backgrounds in:</p>
+                    <div class="positions-grid">
+                        <span class="position-tag">🧬 RNA Biology</span>
+                        <span class="position-tag">💊 Drug Delivery</span>
+                        <span class="position-tag">🥼 Nanomedicine</span>
+                        <span class="position-tag">🔬 Biomaterials</span>
+                        <span class="position-tag">🧫 Gene Therapy</span>
+                        <span class="position-tag">🧪 Chemistry</span>
+
                     </div>
                 </div>
-                <p style="color: #64748b; margin-top: 15px; font-size: 0.95rem; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
-                    Please send your CV and research interests when applying.
-                </p>
+
             </div>
-            
-            <!-- 可选：招聘职位标签（增加一点活泼感） -->
-            <div style="margin-top: 40px;">
-                <p style="color: #475569; margin-bottom: 15px; font-weight: 500;">We welcome applicants with backgrounds in:</p>
-                <div class="positions-grid">
-                    <span class="position-tag">🧬 RNA Biology</span>
-                    <span class="position-tag">💊 Drug Delivery</span>
-                    <span class="position-tag">🥼 Nanomedicine</span>
-                    <span class="position-tag">🔬 Biomaterials</span>
-                    <span class="position-tag">🧫 Gene Therapy</span>
-                    <span class="position-tag">🧪 Chemistry</span>
+        </section>
 
-                </div>
-            </div>
-            
-        </div>
-    </section>
-    
-</main>
+    </main>
 
-<!-- 底部留白 -->
-<div style="height: 60px;"></div>
+    <!-- 底部留白 -->
+    <div style="height: 60px;"></div>
 
-<script>
-    // 图片加载失败处理
-    document.querySelectorAll('img').forEach(img => {
-        img.onerror = function() {
-            this.style.display = 'none';
-            const span = document.createElement('span');
-            span.style.fontSize = '2rem';
-            span.style.color = '#b22222';
-            span.textContent = '🏫';
-            this.parentNode.appendChild(span);
-        };
-    });
-</script>
+    <script>
+        // 图片加载失败处理
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function () {
+                this.style.display = 'none';
+                const span = document.createElement('span');
+                span.style.fontSize = '2rem';
+                span.style.color = '#b22222';
+                span.textContent = '🏫';
+                this.parentNode.appendChild(span);
+            };
+        });
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('show');
+        }
+
+        // 点击菜单项后自动关闭菜单
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.querySelector('.mobile-menu').classList.remove('show');
+            });
+        });
+    </script>
 
 </body>
+
 </html>

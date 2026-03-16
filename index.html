@@ -44,50 +44,54 @@
         }
 
         /* 小屏幕样式 */
-    @media screen and (max-width: 768px) {
-        .desktop-menu {
-            display: none !important;
+        @media screen and (max-width: 768px) {
+            .desktop-menu {
+                display: none !important;
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+
+            /* 学校名称字体变小 */
+            .school-name {
+                font-size: 0.9rem !important;
+                margin-left: 5px !important;
+                /* 减小左间距 */
+            }
+
+            /* 院系名称隐藏 */
+            .department-name {
+                display: none !important;
+            }
+
+            /* 导航条占据整个长度 */
+            .navbar {
+                width: 100% !important;
+                padding: 0 15px !important;
+                /* 减小左右内边距 */
+            }
+
         }
-        .mobile-menu-btn {
-            display: block !important;
+
+        /* 大屏幕样式 */
+        @media screen and (min-width: 769px) {
+            .mobile-menu {
+                display: none !important;
+            }
         }
-         /* 学校名称字体变小 */
-        .school-name {
-            font-size: 0.9rem !important;
-            margin-left: 5px !important;  /* 减小左间距 */
+
+        /* 移动端菜单动画 */
+        .mobile-menu.show {
+            display: flex !important;
         }
-        
-        /* 院系名称隐藏 */
-        .department-name {
-            display: none !important;
-        }
-        
-        /* 导航条占据整个长度 */
-        .navbar {
-            width:100% !important;
-            padding: 0 15px !important; /* 减小左右内边距
-        }
-    
-    }
-    
-    /* 大屏幕样式 */
-    @media screen and (min-width: 769px) {
-        .mobile-menu {
-            display: none !important;
-        }
-    }
-    
-    /* 移动端菜单动画 */
-    .mobile-menu.show {
-        display: flex !important;
-    }
     </style>
 </head>
 
 <body>
 
- <!-- ========== 响应式导航栏 ========== -->
-<nav style="position: fixed; 
+    <!-- ========== 响应式导航栏 ========== -->
+    <nav style="position: fixed; 
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
@@ -100,49 +104,52 @@
             z-index: 1000;
             font-size: 1.1rem;
             padding: 0 30px;
-            border: 1px solid rgba(255,255,255,0.5);" class="navbar">
+            border: 1px solid rgba(255,255,255,0.5);" 
+            class="navbar">
 
-    <!-- 左边logo -->
-    <div style="display: flex; align-items: center;">
-        <img src="./images/logo.png" alt="SJTU Logo" style="height: 70px; width: auto;">
-    </div>
+        <!-- 左边logo -->
+        <div style="display: flex; align-items: center;">
+            <img src="./images/logo.png" alt="SJTU Logo" style="height: 70px; width: auto;">
+        </div>
 
-    <!-- 中间红色文字（小屏幕隐藏） -->
-    <div style="text-align: left; flex: 1; ">
-        <div style="color: #b22222; font-weight: 700; font-size: 1.1rem; margin-left: 20px;" class="school-name">Shanghai Jiao Tong University</div>
-        <div style="color: #b22222; font-size: 0.9rem;margin-left: 20px;"class="department-name">School of Chemistry and Chemical Engineering</div>
-    </div>
+        <!-- 中间红色文字（小屏幕隐藏） -->
+        <div style="text-align: left; flex: 1; ">
+            <div style="color: #b22222; font-weight: 700; font-size: 1.1rem; margin-left: 20px;" class="school-name">
+                Shanghai Jiao Tong University</div>
+            <div style="color: #b22222; font-size: 0.9rem;margin-left: 20px;" class="department-name">School of
+                Chemistry and Chemical Engineering</div>
+        </div>
 
-    <!-- 桌面端导航菜单 -->
-    <div style="display: flex; gap: 2rem; align-items: center;" class="desktop-menu">
-        <div><a href="#" style="color: #b22222; font-weight: 600;">Home</a></div>
-        <div><a href="./pi.html">PI</a></div>
-        <div><a href="./publication.html">Publication</a></div>
-        <div><a href="./news.html">News</a></div>
-        <div><a href="./join-us.html">Join us</a></div>
-        <div><a href="./contact.html">Contact</a></div>
-    </div>
+        <!-- 桌面端导航菜单 -->
+        <div style="display: flex; gap: 2rem; align-items: center;" class="desktop-menu">
+            <div><a href="#" style="color: #b22222; font-weight: 600;">Home</a></div>
+            <div><a href="./pi.html">PI</a></div>
+            <div><a href="./publication.html">Publication</a></div>
+            <div><a href="./news.html">News</a></div>
+            <div><a href="./join-us.html">Join us</a></div>
+            <div><a href="./contact.html">Contact</a></div>
+        </div>
 
-    <!-- 移动端汉堡菜单按钮 -->
-    <div style="display: none; cursor: pointer; font-size: 2rem;" class="mobile-menu-btn" onclick="toggleMobileMenu()">
-        ☰
-    </div>
+        <!-- 移动端汉堡菜单按钮 -->
+        <div style="display: none; cursor: pointer; font-size: 2rem;" class="mobile-menu-btn"
+            onclick="toggleMobileMenu()">
+            ☰
+        </div>
 
-    <!-- 移动端下拉菜单 -->
-    <div style="display: none; position: fixed; top: 80px; left: 0; width: 100%; background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 20px; z-index: 999; flex-direction: column; gap: 15px;" 
-         class="mobile-menu">
-        <div><a href="#" style="color: #b22222; font-weight: 600; display: block; padding: 10px;">Home</a></div>
-        <div><a href="./pi.html" style="display: block; padding: 10px;">PI</a></div>
-        <div><a href="./publication.html" style="display: block; padding: 10px;">Publication</a></div>
-        <div><a href="./news.html" style="display: block; padding: 10px;">News</a></div>
-        <div><a href="./join-us.html" style="display: block; padding: 10px;">Join us</a></div>
-        <div><a href="./contact.html" style="display: block; padding: 10px;">Contact</a></div>
-    </div>
-</nav>
+        <!-- 移动端下拉菜单 -->
+        <div style="display: none; position: fixed; top: 80px; left: 0; width: 100%; background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 20px; z-index: 999; flex-direction: column; gap: 15px;"
+            class="mobile-menu">
+            <div><a href="#" style="color: #b22222; font-weight: 600; display: block; padding: 10px;">Home</a></div>
+            <div><a href="./pi.html" style="display: block; padding: 10px;">PI</a></div>
+            <div><a href="./publication.html" style="display: block; padding: 10px;">Publication</a></div>
+            <div><a href="./news.html" style="display: block; padding: 10px;">News</a></div>
+            <div><a href="./join-us.html" style="display: block; padding: 10px;">Join us</a></div>
+            <div><a href="./contact.html" style="display: block; padding: 10px;">Contact</a></div>
+        </div>
+    </nav>
 
-<!-- 占位：避免导航栏遮挡内容 -->
-<div style="height: 70px;"></div>
-
+    <!-- 占位：避免导航栏遮挡内容 -->
+    <div style="height: 70px;"></div>
 
 
     <!-- ========== 分割线 ========== -->
@@ -207,8 +214,7 @@
             <h2 style="font-size:2.5rem; font-weight:700; color:#b22222; margin-bottom:1rem;">Research</h2>
 
             <!-- 副标题（浅灰色） -->
-            <p
-                style="font-size:1.4rem; color:#475569; margin-bottom:1.5rem; border-left:6px solid #b22222; padding-left:20px; align-items: center;
+            <p style="font-size:1.4rem; color:#475569; margin-bottom:1.5rem; border-left:6px solid #b22222; padding-left:20px; align-items: center;
                 margin-bottom: 0px;">
                 Devices and platforms for oral nucleic acids (mRNA, siRNA) delivery
             </p>
@@ -233,7 +239,8 @@
                         style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <!-- 图片下方描述文字 -->
-                    <p style="text-align: center; margin-top: 16px; font-size: 1rem; color: #334155; font-weight: 500;margin-top: -20px;">
+                    <p
+                        style="text-align: center; margin-top: 16px; font-size: 1rem; color: #334155; font-weight: 500;margin-top: -20px;">
                         Developing next-generation mRNA and siRNA therapies for better therapeutic outcomes. </p>
                 </div>
             </div>
@@ -245,18 +252,40 @@
     <!-- 底部留白 -->
     <div style="height: 60px;"></div>
 
-</body>
-<script>
-    function toggleMobileMenu() {
-        const menu = document.querySelector('.mobile-menu');
-        menu.classList.toggle('show');
-    }
-    
-    // 点击菜单项后自动关闭菜单
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.remove('show');
+
+    <script>
+        // 图片加载失败处理
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function () {
+                this.style.display = 'none';
+                if (this.alt === 'Dr. Xiangang Huang') {
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'purple-placeholder';
+                    placeholder.textContent = 'pi.jpg';
+                    this.parentNode.appendChild(placeholder);
+                } else {
+                    const span = document.createElement('span');
+                    span.style.fontSize = '2rem';
+                    span.style.color = '#b22222';
+                    span.textContent = '🏫';
+                    this.parentNode.appendChild(span);
+                }
+            };
         });
-    });
-</script>
+
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('show');
+        }
+
+        // 点击菜单项后自动关闭菜单
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.querySelector('.mobile-menu').classList.remove('show');
+            });
+        });
+    </script>
+</body>
+
+
 </html>
