@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News · Huang Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f9fafc;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #334155;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #b22222;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #b22222;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+            border-left: 8px solid #b22222;
+            padding-left: 20px;
+        }
+        
+        /* 新闻列表样式 */
+        .news-list {
+            background: white;
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+        }
+        
+        .news-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-content {
+            flex: 1;
+            font-size: 1.1rem;
+            color: #1e293b;
+            padding-right: 30px;
+        }
+        
+        .news-content strong {
+            color: #b22222;
+            font-weight: 600;
+        }
+        
+        .news-content a {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            word-break: break-all;
+        }
+        
+        .news-content a:hover {
+            color: #b22222;
+        }
+        
+        .news-date {
+            font-size: 0.95rem;
+            color: #64748b;
+            white-space: nowrap;
+            background-color: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <nav style="position: fixed; 
+            /* top: 20px; */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1400px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            /* background-color: rgba(255,255,255,0.95); */
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            font-size: 1.1rem;
+            padding: 0 30px;
+            /* box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); */
+            /* border-radius: 60px; */
+            border: 1px solid rgba(255,255,255,0.5);">
+
+        <!-- 左边logo -->
+        <div style="display: flex; align-items: center;">
+            <img src="./images/logo.png" alt="SJTU Logo" style="height: 70px; width: auto; border-radius: 8px;">
+        </div>
+
+        <!-- 中间红色文字 -->
+        <div style="text-align: left; margin-left: 20px; flex: 1;">
+            <div style="color: #b22222; font-weight: 700; font-size: 1.1rem;">Shanghai Jiao Tong University</div>
+            <div style="color: #b22222; font-size: 0.9rem;">School of Chemistry and Chemical Engineering</div>
+        </div>
+
+        <!-- 右边导航菜单 -->
+        <div style="display: flex; gap: 2rem; align-items: center;">
+            <div><a href="./index.html" >Home</a></div>
+            <div><a href="./pi.html">PI</a></div>
+            <div><a href="./publication.html">Publication</a></div>
+            <div><a href="./news.html" style="color: #b22222;font-weight: 600;">News</a></div>
+            <!-- <div><a href="./research.html">Team</a></div> -->
+            <div><a href="./join-us.html">Join us</a></div>
+            <div><a href="./contact.html">Contact</a></div>
+        </div>
+    </nav>
+    <!-- 占位：避免导航栏遮挡 -->
+    <div style="height: 70px;"></div>
+
+    <!-- ========== 分割线 ========== -->
+    <div class="container">
+        <hr style="border: none; border-top: 2px solid #e2e8f0; margin: 20px 0 40px 0;">
+    </div>
+
+<!-- ========== 正文：News ========== -->
+<main class="container" style="margin-bottom: 80px;">
+    
+    <section>
+        <h2 class="section-title">News</h2>
+        
+        <div class="news-list">
+            
+            <!-- 新闻条目 1 -->
+            <div class="news-item">
+                <div class="news-content">
+                    Thrilled to share that our paper "Lipid–Polymer Hybrid Nanoparticles (LPHNPs) for RNA Delivery" has been selected as the <strong>cover</strong> for <em>Accounts of Chemical Research</em>! Many thanks to Prof. Wei Tao Lab! (<a href="https://pubs.acs.org/toc/achre4/59/5?ref=breadcrumb" target="_blank">https://pubs.acs.org/toc/achre4/59/5?ref=breadcrumb</a>)
+                </div>
+                <div class="news-date">2026-03-03</div>
+            </div>
+            
+            <!-- 新闻条目 2 -->
+            <div class="news-item">
+                <div class="news-content">
+                    Huang Lab (<em>The land for medical innovation</em>) @SJTU officially launched!
+                </div>
+                <div class="news-date">2026-03-01</div>
+            </div>
+            
+        </div>
+    </section>
+    
+</main>
+
+<!-- 底部留白 -->
+<div style="height: 60px;"></div>
+
+<script>
+    // 图片加载失败处理
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = function() {
+            this.style.display = 'none';
+            const span = document.createElement('span');
+            span.style.fontSize = '2rem';
+            span.style.color = '#b22222';
+            span.textContent = '🏫';
+            this.parentNode.appendChild(span);
+        };
+    });
+</script>
+
+</body>
+</html>
