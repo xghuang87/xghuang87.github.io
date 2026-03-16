@@ -54,11 +54,18 @@
          /* 学校名称字体变小 */
         .school-name {
             font-size: 0.9rem !important;
+            margin-left: 5px !important;  /* 减小左间距 */
         }
         
         /* 院系名称隐藏 */
         .department-name {
             display: none !important;
+        }
+        
+        /* 导航条占据整个长度 */
+        .navbar {
+            width:100% !important;
+            padding: 0 15px !important; /* 减小左右内边距
         }
     
     }
@@ -93,7 +100,7 @@
             z-index: 1000;
             font-size: 1.1rem;
             padding: 0 30px;
-            border: 1px solid rgba(255,255,255,0.5);">
+            border: 1px solid rgba(255,255,255,0.5);" class="navbar">
 
     <!-- 左边logo -->
     <div style="display: flex; align-items: center;">
@@ -101,9 +108,9 @@
     </div>
 
     <!-- 中间红色文字（小屏幕隐藏） -->
-    <div style="text-align: left; flex: 1;">
-        <div style="color: #b22222; font-weight: 700; font-size: 1.1rem;" class="school-name">Shanghai Jiao Tong University</div>
-        <div style="color: #b22222; font-size: 0.9rem;"class="department-name">School of Chemistry and Chemical Engineering</div>
+    <div style="text-align: left; flex: 1; ">
+        <div style="color: #b22222; font-weight: 700; font-size: 1.1rem; margin-left: 20px;" class="school-name">Shanghai Jiao Tong University</div>
+        <div style="color: #b22222; font-size: 0.9rem;margin-left: 20px;"class="department-name">School of Chemistry and Chemical Engineering</div>
     </div>
 
     <!-- 桌面端导航菜单 -->
