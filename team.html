@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team · Huang Lab </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f9fafc;
+      line-height: 1.6;
+      color: #1e293b;
+    }
+
+    a {
+      text-decoration: none;
+      color: #334155;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #b22222;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* 小屏幕样式 */
+    @media screen and (max-width: 768px) {
+      .desktop-menu {
+        display: none !important;
+      }
+
+      .mobile-menu-btn {
+        display: block !important;
+      }
+
+      /* 学校名称字体变小 */
+      .school-name {
+        font-size: 0.9rem !important;
+        margin-left: 5px !important;
+        /* 减小左间距 */
+      }
+
+      /* 院系名称隐藏 */
+      .department-name {
+        display: none !important;
+      }
+
+      /* 导航条占据整个长度 */
+      .navbar {
+        width: 100% !important;
+        padding: 0 15px !important;
+        /* 减小左右内边距 */
+      }
+
+    }
+
+    /* 大屏幕样式 */
+    @media screen and (min-width: 769px) {
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+
+    /* 移动端菜单动画 */
+    .mobile-menu.show {
+      display: flex !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== 响应式导航栏 ========== -->
+  <nav style="position: fixed; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1400px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            font-size: 1.1rem;
+            padding: 0 30px;
+            border: 1px solid rgba(255,255,255,0.5);" class="navbar">
+
+    <!-- 左边logo -->
+    <div style="display: flex; align-items: center;">
+      <img src="./images/logo.png" alt="SJTU Logo" style="height: 70px; width: auto;">
+    </div>
+
+    <!-- 中间红色文字（小屏幕隐藏） -->
+    <div style="text-align: left; flex: 1; ">
+      <div style="color: #b22222; font-weight: 700; font-size: 1.1rem; margin-left: 20px;" class="school-name">
+        Shanghai Jiao Tong University</div>
+      <div style="color: #b22222; font-size: 0.9rem;margin-left: 20px;" class="department-name">School of
+        Chemistry and Chemical Engineering</div>
+    </div>
+
+    <!-- 桌面端导航菜单 -->
+    <div style="display: flex; gap: 2rem; align-items: center;" class="desktop-menu">
+      <div><a href="./index.html#">Home</a></div>
+      <div><a href="./pi.html">PI</a></div>
+      <div><a href="./team.html" style="color: #b22222; font-weight: 600;">Team</a></div>
+      <div><a href="./publication.html">Publication</a></div>
+      <div><a href="./news.html">News</a></div>
+      <div><a href="./join-us.html">Join us</a></div>
+      <div><a href="./contact.html">Contact</a></div>
+    </div>
+
+    <!-- 移动端汉堡菜单按钮 -->
+    <div style="display: none; cursor: pointer; font-size: 2rem;" class="mobile-menu-btn" onclick="toggleMobileMenu()">
+      ☰
+    </div>
+
+
+
+    <!-- 移动端下拉菜单 -->
+    <div
+      style="display: none; position: fixed; top: 80px; left: 0; width: 100%; background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 20px; z-index: 999; flex-direction: column; gap: 15px;"
+      class="mobile-menu">
+      <div><a href="./index.html#">Home</a></div>
+      <div><a href="./pi.html" style="display: block; padding: 10px;">PI</a></div>
+      <div><a href="./team.html" style="color: #b22222; font-weight: 600;display: block; padding: 10px">Team</a></div>
+      <div><a href="./publication.html" style="display: block; padding: 10px;">Publication</a></div>
+      <div><a href="./news.html" style="display: block; padding: 10px;">News</a></div>
+      <div><a href="./join-us.html" style="display: block; padding: 10px;">Join us</a></div>
+      <div><a href="./contact.html" style="display: block; padding: 10px;">Contact</a></div>
+    </div>
+  </nav>
+
+  <!-- 占位：避免导航栏遮挡内容 -->
+  <div style="height: 70px;"></div>
+
+
+  <!-- ========== 分割线 ========== -->
+  <div class="container">
+    <hr style="border: none; border-top: 2px solid #e2e8f0; margin: 20px 0 40px 0;">
+  </div>
+
+  <!-- ========== 正文 ========= -->
+  <main class="container" style="margin-bottom: 80px;">
+    <section style="
+        width: 100%;
+        /* border-bottom: 1px solid #eeeeee; */
+      ">
+
+      <div style="
+          width: calc(100% - 48px);
+          max-width: 1120px;
+          margin: 0 auto;
+          padding: 105px 0 15px;
+          text-align: center;
+        ">
+
+        <div style="
+            width: 58px;
+            height: 3px;
+            margin: 0 auto 26px;
+            background-color: #b22222;
+          "></div>
+
+        <p style="
+            margin: 0 0 13px;
+            color: #b22222;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+          ">
+          People behind the science
+        </p>
+
+        <h1 style="
+            margin: 0;
+            color: #222222;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(46px, 7vw, 76px);
+            font-weight: 600;
+            line-height: 1.0;
+          ">
+          Meet Our Team
+        </h1>
+
+        <p style="
+            max-width: 850px;
+            margin: 25px auto 0;
+            color: #666666;
+            font-size: 1.2rem;
+            line-height: 1.8;
+          ">
+          We are an interdisciplinary team developing innovative biomaterials,
+          lipid nanoparticles, and delivery technologies for RNA therapeutics
+          and precision medicine.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- POSTDOCTORAL FELLOWS          -->
+    <!-- ============================= -->
+
+    <section style="
+        width: 100%;
+      ">
+
+      <div style="
+          width: calc(100% - 48px);
+          max-width: 1120px;
+          margin: 0 auto;
+          padding: 55px 0;
+        ">
+
+        <div style="
+            margin-bottom: 43px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dddddd;
+          ">
+         
+          <h2 style="
+              margin: 0;
+              color: #222222;
+              font-family: Georgia, 'Times New Roman', serif;
+              font-size: clamp(32px, 4vw, 46px);
+              font-weight: 600;
+              line-height: 1.2;
+            ">
+            Postdoctoral Fellows
+          </h2>
+
+        </div>
+
+        <div style="
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            gap: 24px;
+          ">
+
+          <!-- postdoc Member 1 -->
+
+          <article style="
+              flex: 1 1 230px;
+              max-width: 350px;
+              overflow: hidden;
+              border: 1px solid #e2e2e2;
+            ">
+
+            <img src="./images/yuting.jpg" alt="Portrait of Dr. Yuting Wen" style="
+                display: block;
+                width: 100%;
+                height: 285px;
+                object-fit: contain;
+                object-position: center;
+              ">
+
+            <div style="
+                padding: 26px 28px 30px;
+              ">
+
+              <p style="
+                  margin: 0 0 8px;
+                  color: #b22222;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 1.5px;
+                  text-transform: uppercase;
+                ">
+                Postdoctoral Fellow
+              </p>
+
+              <h3 style="
+                  margin: 0;
+                  color: #222222;
+                  font-family: Georgia, 'Times New Roman', serif;
+                  font-size: 27px;
+                  font-weight: 600;
+                  line-height: 1.25;
+                ">
+                Dr. Yuting Wen
+                <span style="color: #6e6d6d; font-size: 0.5em; font-weight: 400; margin-left: 4px;">
+                  (01)
+                </span>
+              </h3>
+
+              <details style="margin: 13px 0 17px;">
+                <summary style="
+          color: #6e6d6d;
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+          list-style: none;               /* 移除默认三角 */
+          display: inline-block;          /* 只占内容宽度 */
+          border-bottom: 1px dashed #ccc; /* 可选装饰 */
+          padding-bottom: 2px;
+        ">
+                  Short bio.
+                </summary>
+                <p style="
+          margin: 13px 0 0;
+          color: #666666;
+          font-size: 14px;
+          line-height: 1.7;
+        ">
+                  Dr. Yuting Wen received her Ph.D. in the Science of Chinese Pharmacology
+                  from Shanghai University of Traditional Chinese Medicine in 2026.
+                  Her research primarily focuses on the oral delivery of mRNA.
+                </p>
+              </details>
+
+              <a href="mailto:wenyuting@sjtu.edu.cn" style="
+                  color: #b22222;
+                  font-size: 13px;
+                  font-weight: 700;
+                  text-decoration: none;
+                ">
+                wenyuting@sjtu.edu.cn
+              </a>
+            </div>
+          </article>
+    </section>
+
+    <!-- ============================= -->
+    <!-- Graduate Students (PhD / MS) -->
+    <!-- ============================= -->
+
+    <section style="
+        width: 100%;
+        ">
+
+      <div style="
+          width: calc(100% - 48px);
+          max-width: 1120px;
+          margin: 0 auto;
+          padding: 95px 0;
+        ">
+
+        <div style="
+            margin-bottom: 43px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d8d8d8;
+          ">
+
+          <!-- <p style="
+              margin: 0 0 8px;
+              color: #b22222;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            ">
+            Graduate researchers
+          </p> -->
+
+          <h2 style="
+              margin: 0;
+              color: #222222;
+              font-family: Georgia, 'Times New Roman', serif;
+              font-size: clamp(32px, 4vw, 46px);
+              font-weight: 600;
+              line-height: 1.2;
+            ">
+            Graduate Students (PhD / MS)
+          </h2>
+
+        </div>
+
+        <div style="
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            gap: 24px;
+          ">
+
+          <!-- PhD student 1 -->
+
+          <article style="
+              flex: 1 1 230px;
+              max-width: 350x;
+              overflow: hidden;
+              border: 1px solid #dddddd;
+            ">
+
+            <img src="./images/qianhe.jpg" alt="Jingqianhe Tu" style="
+                display: block;
+                width: 100%;
+                height: 285px;
+                object-fit: cover;
+                object-position: center;
+                background-color: #eeeeee;
+              ">
+
+            <div style="padding: 22px 21px 25px;">
+
+              <p style="
+                  margin: 0 0 7px;
+                  color: #b22222;
+                  font-size: 10px;
+                  font-weight: 700;
+                  letter-spacing: 1.3px;                ">
+                PhD Student（2027）
+              </p>
+
+              <h3 style="
+                  margin: 0;
+                  color: #222222;
+                  font-family: Georgia, 'Times New Roman', serif;
+                  font-size: 23px;
+                  font-weight: 600;
+                  line-height: 1.25;
+                ">
+                Jingqianhe Tu
+                <span style="color: #6e6d6d; font-size: 0.5em; font-weight: 400; margin-left: 4px;">
+                  (02)
+              </h3>
+
+              <details style="margin: 13px 0 17px;">
+                <summary style="
+                      color: #6e6d6d;
+                      font-size: 14px;
+                      font-weight: 700;
+                      cursor: pointer;
+                      list-style: none;               /* 移除默认三角 */
+                      display: inline-block;          /* 只占内容宽度 */
+                      border-bottom: 1px dashed #ccc; /* 可选装饰 */
+                      padding-bottom: 2px;
+        ">
+                  Short bio.
+                </summary>
+                <p style="
+          margin: 13px 0 0;
+          color: #666666;
+          font-size: 14px;
+          line-height: 1.7;
+        ">
+                  Jingqianhe Tu is an undergraduate student at Shanghai Jiao Tong University. She joined Dr.
+                  Huang’s lab in 2026 and will carry out her doctoral research here from 2027.
+                  In Huang’s Lab, her research interest lies in oral mRNA delivery. </p>
+              </details>
+
+              <a href="mailto:tjqh0524@sjtu.edu.cn" style="
+                  color: #b22222;
+                  font-size: 12px;
+                  font-weight: 700;
+                  text-decoration: none;
+                  word-break: break-word;
+                ">
+                tjqh0524@sjtu.edu.cn
+              </a>
+
+            </div>
+
+          </article>
+          <!-- PhD student 2 -->
+
+          <article style="
+              flex: 1 1 230px;
+              /* max-width: 262px; */
+              overflow: hidden;
+              border: 1px solid #dddddd;
+            ">
+
+            <img src="./images/wangshu.jpg" alt="Portrait of Wangshu Li" style="
+                display: block;
+                width: 100%;
+                height: 285px;
+                object-fit: contain;
+                object-position: center top;
+              ">
+
+            <div style="padding: 22px 21px 25px;">
+
+              <p style="
+                  margin: 0 0 7px;
+                  color: #b22222;
+                  font-size: 10px;
+                  font-weight: 700;
+                  letter-spacing: 1.3px;
+                ">
+                PhD Student（2026）
+              </p>
+
+              <h3 style="
+                  margin: 0;
+                  color: #222222;
+                  font-family: Georgia, 'Times New Roman', serif;
+                  font-size: 23px;
+                  font-weight: 600;
+                  line-height: 1.25;
+                ">
+                Wangshu Li
+                <span style="color: #6e6d6d; font-size: 0.5em; font-weight: 400; margin-left: 4px;">
+                  (03)
+              </h3>
+
+              <details style="margin: 13px 0 17px;">
+                <summary style="
+          color: #6e6d6d;
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+          list-style: none;               /* 移除默认三角 */
+          display: inline-block;          /* 只占内容宽度 */
+          border-bottom: 1px dashed #ccc; /* 可选装饰 */
+          padding-bottom: 2px;
+        ">
+                  Short bio.
+                </summary>
+                <p style="
+          margin: 13px 0 0;
+          color: #666666;
+          font-size: 14px;
+          line-height: 1.7;
+        ">
+                  Wangshu Li received her master's degree in Biophysics from the University of Chinese Academy of
+                  Sciences.
+                  She joined Huang's Lab as a Ph.D. student in 2026. Her current research focuses on mRNA
+                  delivery.
+
+                </p>
+              </details>
+
+              <a href="mailto:student@sjtu.edu.cn" style="
+                  color: #b22222;
+                  font-size: 12px;
+                  font-weight: 700;
+                  text-decoration: none;
+                  word-break: break-word;
+                ">
+                liwangshu@sjtu.edu.cn
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- PhD student 3 -->
+
+
+          <article style="
+              flex: 1 1 230px;
+              /* max-width: 262px; */
+              overflow: hidden;
+              border: 1px solid #dddddd;
+            ">
+
+            <img src="./images/bo.jpg" alt="Portrait of Bo Wang" style="
+                display: block;
+                width: 100%;
+                height: 285px;
+                object-fit: contain;
+                object-position: center top;
+              ">
+
+            <div style="padding: 22px 21px 25px;">
+
+              <p style="
+                  margin: 0 0 7px;
+                  color: #b22222;
+                  font-size: 10px;
+                  font-weight: 700;
+                  letter-spacing: 1.3px;
+                ">
+                PhD Student（2026）
+              </p>
+
+              <h3 style="
+                  margin: 0;
+                  color: #222222;
+                  font-family: Georgia, 'Times New Roman', serif;
+                  font-size: 23px;
+                  font-weight: 600;
+                  line-height: 1.25;
+                ">
+                Bo Wang
+                <span style="color: #6e6d6d; font-size: 0.5em; font-weight: 400; margin-left: 4px;">
+                  (04)
+              </h3>
+
+              <details style="margin: 13px 0 17px;">
+                <summary style="
+          color: #6e6d6d;
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+          list-style: none;               /* 移除默认三角 */
+          display: inline-block;          /* 只占内容宽度 */
+          border-bottom: 1px dashed #ccc; /* 可选装饰 */
+          padding-bottom: 2px;
+        ">
+                  Short bio.
+                </summary>
+                <p style="
+          margin: 13px 0 0;
+          color: #666666;
+          font-size: 14px;
+          line-height: 1.7;
+        ">
+                  Bo Wang received her Master’s degree in Pharmaceutics from Wuhan University in 2025.
+                  She joined Dr. Huang's Lab, where her research focuses on developing next-generation oral
+                  delivery platforms for RNA therapeutics through the integration of advanced biomaterials,
+                  nanotechnology, and translational medicine.
+                </p>
+              </details>
+
+
+              <a href="mailto:wangbo00@sjtu.edu.cn" style="
+                  color: #b22222;
+                  font-size: 12px;
+                  font-weight: 700;
+                  text-decoration: none;
+                  word-break: break-word;
+                ">
+                wangbo00@sjtu.edu.cn
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+    </div>
+
+    </div>
+
+    </section>
+  </main>
+
+
+  <!-- 底部留白 -->
+  <div style="height: 60px;"></div>
+
+
+  <script>
+    // 图片加载失败处理
+    document.querySelectorAll('img').forEach(img => {
+      img.onerror = function () {
+        this.style.display = 'none';
+        if (this.alt === 'Dr. Xiangang Huang') {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'purple-placeholder';
+          placeholder.textContent = 'pi.jpg';
+          this.parentNode.appendChild(placeholder);
+        } else {
+          const span = document.createElement('span');
+          span.style.fontSize = '2rem';
+          span.style.color = '#b22222';
+          span.textContent = '🏫';
+          this.parentNode.appendChild(span);
+        }
+      };
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.querySelector('.mobile-menu');
+      menu.classList.toggle('show');
+    }
+
+    // 点击菜单项后自动关闭菜单
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', function () {
+        document.querySelector('.mobile-menu').classList.remove('show');
+      });
+    });
+  </script>
+</body>
+
+
+</html>
